@@ -21,6 +21,7 @@ public class CafeView {
 	private Scanner sc;
 	private MenuKind m;
 //	private Dessert d;
+	private int git;
 	
 	public CafeView() {
 		sc = new Scanner(System.in);
