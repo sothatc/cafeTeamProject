@@ -1,5 +1,6 @@
 package kh.or.iei.cafe.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import kh.or.iei.cafe.vo.Consumer;
@@ -125,11 +126,11 @@ public class CafeView {
 		 System.out.println("주문하신 메뉴를 찾을 수 없습니다.");
 	 }
 	 
-	 public void inventoryDrink(MenuKind[] drinkMenu,int indexDr) {
+	 public void inventoryDrink(ArrayList<MenuKind> drinkMenu) {
 		System.out.println("===음료 내역 확인===");
 		System.out.println("메뉴이름\t가격"); 
-		for (int i = 0; i < indexDr; i++) {
-			MenuKind m = drinkMenu[i];
+		for (int i = 0; i < drinkMenu.size(); i++) {
+			MenuKind m = drinkMenu.get(i);
 			System.out.println(m.getMenuName() + "\t" + m.getMoney());
 		}
 	 }

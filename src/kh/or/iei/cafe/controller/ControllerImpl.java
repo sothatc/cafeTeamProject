@@ -25,11 +25,11 @@ public class ControllerImpl implements CafeController{
 	public ControllerImpl() {
 		super();
 		sc = new Scanner(System.in);
-		dessertMenu = new Dessert[50];
+		dessertMenu = new ArrayList<Dessert>();
 		view = new CafeView();
-		drinkMenu = new MenuKind[50]; //추가 된 음료 메뉴를 저장할 배열
-		consumer = new Consumer[50]; // 고객이 주문한 메뉴를 저장할 배열
-		consumerDes = new ConsumerDes[50]; 
+		drinkMenu = new ArrayList<MenuKind>(); //추가 된 음료 메뉴를 저장할 배열
+		consumer = new ArrayList<Consumer>(); // 고객이 주문한 메뉴를 저장할 배열
+		consumerDes = new ArrayList<ConsumerDes>(); 
 	}
 	
 	@Override
@@ -98,7 +98,7 @@ public class ControllerImpl implements CafeController{
 	//1-1.음료 메뉴 추가 메소드
 	@Override
 	public void addDrink() {
-		drinkMenu[indexDr++] = view.addDrink();
+		drinkMenu.add(view.addDrink());
 	}
 
 	//1-2.음료 수정 메소드
@@ -109,7 +109,7 @@ public class ControllerImpl implements CafeController{
 		if (searchindexDr == -1) {
 			view.nosearchName();
 		} else {
-			drinkMenu[searchindexDr] = view.updateDrink();
+			drinkMenu.set(searchindexDr, view.updateDrink());
 		}
 	}
 
@@ -121,10 +121,7 @@ public class ControllerImpl implements CafeController{
 		if (searchindexDr == -1) {
 			view.nosearchName();
 		} else {
-			for (int i = searchindexDr; i < indexDr - 1; i++) {
-				drinkMenu[i] = drinkMenu[i + 1];
-			}
-			indexDr --;
+			drinkMenu.remove(searchindexDr);
 			view.msg("삭제");
 		} 
 	}
