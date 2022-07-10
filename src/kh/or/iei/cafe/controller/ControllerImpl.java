@@ -27,7 +27,7 @@ public class ControllerImpl implements CafeController{
 		sc = new Scanner(System.in);
 		dessertMenu = new Dessert[50];
 		view = new CafeView();
-		drinkMenu = new MenuKind[50]; //추가된 음료 메뉴를 저장할 배열
+		drinkMenu = new MenuKind[50]; //추가 된 음료 메뉴를 저장할 배열
 		consumer = new Consumer[50]; // 고객이 주문한 메뉴를 저장할 배열
 		consumerDes = new ConsumerDes[50]; 
 	}
