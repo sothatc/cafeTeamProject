@@ -1,5 +1,6 @@
 package kh.or.iei.cafe.controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import kh.or.iei.cafe.controller.Controller.CafeController;
@@ -14,11 +15,11 @@ public class ControllerImpl implements CafeController{
 	
 	private Scanner sc;
 	private CafeView view;
-	private MenuKind[] drinkMenu;
-	private Dessert[] dessertMenu;
+	private ArrayList<MenuKind> drinkMenu;
+	private ArrayList<Dessert> dessertMenu;
 	private int indexDr;
 	private int indexDes;
-	private Consumer[] consumer;
+	private ArrayList<Consumer> consumer;
 	private ConsumerDes[] consumerDes;
 	
 	public ControllerImpl() {
