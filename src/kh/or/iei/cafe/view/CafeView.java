@@ -213,12 +213,12 @@ public class CafeView { ///dddddd
 			
 			
 	 }
-	 public void orderDessert(ConsumerDes[] consumerDes, Dessert[] dessertMenu, int indexDes) {
+	 public void orderDessert(ArrayList<ConsumerDes> consumerDes, ArrayList<Dessert> dessertMenu, int indexDes) {
 		
 		 int i;
 		 int j=1;
-		 for(i=0;i<indexDes;i++) {
-			 d = dessertMenu[i];
+		 for(i=0;i<dessertMenu.size();i++) {
+			 d = dessertMenu.get(i);
 			 System.out.println(j+". "+d.getDessertName() + "\t" + d.getDessertPrice());
 			 j++;
 		 }
@@ -257,15 +257,15 @@ public class CafeView { ///dddddd
 //			d.setDessertCount(orderDessertCount);
 			d.setDessertCount(d.getDessertCount() - orderDessertCount);
 			ConsumerDes cd = new ConsumerDes(inOutSel,dessertSel,orderDessertCount);
-			consumerDes[dessertK++]  = cd;
+			consumerDes.add(cd);
 			
 	 }
-	 public void checkDrinkOrder(int indexDr,Consumer[] consumer) {
+	 public void checkDrinkOrder(int indexDr,ArrayList<Consumer> consumer) {
 		 Consumer c = new Consumer();
 		 System.out.println("==== 주문 내역 확인 ====");
 		 System.out.println("메뉴이름\t수량\t사이즈\t온도\t포장여부");
-		 for(int i=0;i<drinkK;i++) {
-			 c = consumer[i];
+		 for(int i=0;i<consumer.size();i++) {
+			 c = consumer.get(i);
 			 if(drinkSel.equals(c.getDrinkSel())) {
 				
 				 System.out.println(c.getDrinkSel()+"\t"
