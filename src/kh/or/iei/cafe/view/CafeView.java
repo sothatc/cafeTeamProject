@@ -8,7 +8,7 @@ import kh.or.iei.cafe.vo.ConsumerDes;
 import kh.or.iei.cafe.vo.Dessert;
 import kh.or.iei.cafe.vo.MenuKind;
 
-public class CafeView {
+public class CafeView { ///dddddd
 	public String tempSel;
 	public String sizeSel;
 	public String inOutSel;
