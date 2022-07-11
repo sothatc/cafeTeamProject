@@ -135,12 +135,12 @@ public class CafeView {
 		}
 	 }
 	 
-	 public void orderDrink(int indexDr,MenuKind[] drinkMenu,Consumer[] consumer) {
+	 public void orderDrink(int indexDr,ArrayList<MenuKind> drinkMunu,ArrayList<Consumer> consumer) {
 		 MenuKind m = new MenuKind();
 		 int i;
 		 int j=1;
-		 for(i=0;i<indexDr;i++) {
-			 m = drinkMenu[i];
+		 for(i=0;i<drinkMunu.size();i++) {
+			 m = drinkMunu.get(i);
 			 System.out.println(j+"\t"+m.getMenuName() + "\t" + m.getMoney());
 			 j++;
 		 }
