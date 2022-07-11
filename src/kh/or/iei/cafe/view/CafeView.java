@@ -8,7 +8,7 @@ import kh.or.iei.cafe.vo.ConsumerDes;
 import kh.or.iei.cafe.vo.Dessert;
 import kh.or.iei.cafe.vo.MenuKind;
 
-public class CafeView {
+public class CafeView { ///dddddd
 	public String tempSel;
 	public String sizeSel;
 	public String inOutSel;
@@ -217,7 +217,7 @@ public class CafeView {
 		
 		 int i;
 		 int j=1;
-		 for(i=0;i<indexDes;i++) {
+		 for(i=0;i<dessertMenu.size();i++) {
 			 d = dessertMenu.get(i);
 			 System.out.println(j+". "+d.getDessertName() + "\t" + d.getDessertPrice());
 			 j++;
@@ -264,7 +264,8 @@ public class CafeView {
 		 Consumer c = new Consumer();
 		 System.out.println("==== 주문 내역 확인 ====");
 		 System.out.println("메뉴이름\t수량\t사이즈\t온도\t포장여부");
-		 for(int i=0;i<drinkK;i++) {
+
+		 for(int i=0;i<consumer.size();i++) {
 			 c = consumer.get(i);
 			 if(drinkSel.equals(c.getDrinkSel())) {
 				
