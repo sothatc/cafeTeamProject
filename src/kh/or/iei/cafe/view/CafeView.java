@@ -138,7 +138,7 @@ public class CafeView {
 	 public void orderDrink(int indexDr,ArrayList<MenuKind> drinkMunu,ArrayList<Consumer> consumer) {
 		 MenuKind m = new MenuKind();
 		 int i;
-		 int j=1; //s
+		 int j=1;
 		 for(i=0;i<drinkMunu.size();i++) {
 			 m = drinkMunu.get(i);
 			 System.out.println(j+"\t"+m.getMenuName() + "\t" + m.getMoney());
@@ -208,17 +208,17 @@ public class CafeView {
 			System.out.println("주문이 완료되었습니다.");
 			m.setConut(drinkConut);
 			Consumer c = new Consumer(drinkSel,tempSel,sizeSel,drinkConut,inOutSel);
-			consumer[drinkK++]  = c;
+			consumer.add(c);
 			
 			
 			
 	 }
-	 public void orderDessert(ConsumerDes[] consumerDes, Dessert[] dessertMenu, int indexDes) {
+	 public void orderDessert(ArrayList<ConsumerDes> consumerDes, ArrayList<Dessert> dessertMenu, int indexDes) {
 		
 		 int i;
 		 int j=1;
 		 for(i=0;i<indexDes;i++) {
-			 d = dessertMenu[i];
+			 d = dessertMenu.get(i);
 			 System.out.println(j+". "+d.getDessertName() + "\t" + d.getDessertPrice());
 			 j++;
 		 }
@@ -257,15 +257,15 @@ public class CafeView {
 //			d.setDessertCount(orderDessertCount);
 			d.setDessertCount(d.getDessertCount() - orderDessertCount);
 			ConsumerDes cd = new ConsumerDes(inOutSel,dessertSel,orderDessertCount);
-			consumerDes[dessertK++]  = cd;
+			consumerDes.add(cd);
 			
 	 }
-	 public void checkDrinkOrder(int indexDr,Consumer[] consumer) {
+	 public void checkDrinkOrder(int indexDr,ArrayList<Consumer> consumer) {
 		 Consumer c = new Consumer();
 		 System.out.println("==== 주문 내역 확인 ====");
 		 System.out.println("메뉴이름\t수량\t사이즈\t온도\t포장여부");
 		 for(int i=0;i<drinkK;i++) {
-			 c = consumer[i];
+			 c = consumer.get(i);
 			 if(drinkSel.equals(c.getDrinkSel())) {
 				
 				 System.out.println(c.getDrinkSel()+"\t"
@@ -277,12 +277,12 @@ public class CafeView {
 			 }
 		 }
 	 }
-	 public void checkDessertOrder(Dessert[] dessertMenu,int indexDes) {
+	 public void checkDessertOrder(ArrayList<Dessert> dessertMenu,int indexDes) {
 		
 		 System.out.println("==== 주문 내역 확인 ====");
 		 System.out.println("메뉴이름\t수량\t포장여부");
 		 for(int i=0;i<indexDes;i++) {
-			 d = dessertMenu[i];
+			 d = dessertMenu.get(i);
 			 if(dessertSel.equals(d.getDessertName())) {
 				 System.out.println(d.getDessertName()+"\t"
 						 		+d.getDessertCount()+"\t"
