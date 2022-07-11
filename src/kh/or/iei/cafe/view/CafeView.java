@@ -138,7 +138,7 @@ public class CafeView {
 	 public void orderDrink(int indexDr,ArrayList<MenuKind> drinkMunu,ArrayList<Consumer> consumer) {
 		 MenuKind m = new MenuKind();
 		 int i;
-		 int j=1;
+		 int j=1; //s
 		 for(i=0;i<drinkMunu.size();i++) {
 			 m = drinkMunu.get(i);
 			 System.out.println(j+"\t"+m.getMenuName() + "\t" + m.getMoney());
